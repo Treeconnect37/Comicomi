@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comicomi</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+
+  <header>
+  <div class="logo-container">
+    <img src="C:\Users\Severine\Desktop\Comicomi\danibrillant.jpg" alt="Logo Comicomi">
+    <h1>Comicomi</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#ofertas">Ofertas</a></li>
+      <li><a href="#comerciantes">Comerciantes</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main>
+    <section id="ofertas">
+      <h2>Ofertas Cercanas</h2>
+      <div id="lista-ofertas"></div>
+    </section>
+
+    <section id="comerciantes">
+      <h2>¿Eres comerciante?</h2>
+      <button onclick="mostrarFormulario()">Publicar una oferta</button>
+
+      <form id="formulario-oferta" style="display:none;">
+        <input type="text" id="nombre" placeholder="Nombre del comercio" required>
+        <input type="text" id="producto" placeholder="Producto/Panier sorpresa" required>
+        <input type="text" id="precio" placeholder="Precio" required>
+        <input type="text" id="hora" placeholder="Hora de retiro" required>
+        <button type="submit">Publicar</button>
+      </form>
+    </section>
+  </main>
+  
+<section id="donacion" class="seccion-donacion">
+  <h2>Apoya a ComiComi</h2>
+  <p>Tu donación nos ayuda a luchar contra el desperdicio de alimentos.</p>
+  <button id="botonDonar">Donar ahora</button>
+</section>
+
+  <footer id="contacto" class="footer-contacto">
+  <div class="formulario-footer">
+    <h2>Contáctanos</h2>
+    <form id="formularioContacto" action="https://formspree.io/f/mgvzlagy" method="POST">
+      <div class="formulario-grupo">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+
+      <div class="formulario-grupo">
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+      </div>
+
+      <div class="formulario-grupo">
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+      </div>
+<input type="text" name="_gotcha" style="display:none">
+<input type="hidden" name="provenance" value="ComiComi">
+      <button type="submit">Enviar mensaje</button>
+      <p id="confirmacion" style="display: none; color: lightgreen;">¡Mensaje enviado con éxito!</p>
+    </form>
+  </div>
+
+  <p class="footer-bandeau">©2025 ComiComi - plataforma contra el desperdicio alimentario</p>
+</footer>
+
+  <script src="script.js"defer></script>
+</body>
+</html>
